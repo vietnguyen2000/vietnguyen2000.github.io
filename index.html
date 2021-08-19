@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pic-a-Pix</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+</head>
+
+<body style="width: 100vw; height: 100vh; padding: 0; margin: 0">
+
+<iframe id = "game" src="game.html" frameborder="0" style="margin: auto; display: block;"></iframe>
+
+</body>
+
+<script>
+    const updateSize = () => {
+        let vw = document.body.clientWidth
+        const vh = document.body.clientHeight
+        console.log(vw, vh)
+        const DEFAULT_RATIO = 375 / 617
+        if (vw / vh > DEFAULT_RATIO) {
+            vw = vh * DEFAULT_RATIO    
+        }
+        const game = document.getElementById('game')
+        game.width = Math.round(vw)
+        game.height = Math.round(vh)
+    }
+
+    updateSize()
+    window.addEventListener('resize', updateSize)
+</script>
+</html>
