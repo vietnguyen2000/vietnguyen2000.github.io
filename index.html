@@ -1,35 +1,29 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Pic-a-Pix</title>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <meta name="apple-mobile-web-app-capable" content="no" />
-    <meta name="full-screen" content="yes" />
-    <meta name="screen-orientation" content="portrait" />
-</head>
-
-<body style="width: 100vw; height: 100vh; padding: 0; margin: 0">
-
-<iframe id = "game" src="game.html" frameborder="0" style="margin: auto; display: block;"></iframe>
-
-</body>
-
-<script>
-    const updateSize = () => {
-        let vw = document.body.clientWidth
-        const vh = document.body.clientHeight
-        console.log(vw, vh)
-        const DEFAULT_RATIO = 375 / 617
-        if (vw / vh > DEFAULT_RATIO) {
-            vw = vh * DEFAULT_RATIO    
-        }
-        const game = document.getElementById('game')
-        game.width = Math.round(vw)
-        game.height = Math.round(vh)
-    }
-
-    updateSize()
-    window.addEventListener('resize', updateSize)
-</script>
-</html>
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="UTF-8"/><title>Pic-a-Pix</title><meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width,height=device-height,target-densitydpi=device-dpi"/><meta name="apple-mobile-web-app-capable" content="no"/><meta name="full-screen" content="yes"/><meta name="screen-orientation" content="portrait"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"><script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous"><script defer="defer" src="js/bundle.53393d9ec7cd2ef99960.min.js"></script></head><body><div id="root"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js" integrity="sha512-qlzIeUtTg7eBpmEaS12NZgxz52YYZVF5myj89mjJEesBd/oE9UPsYOX2QAXzvOAZYEvQohKdcY8zKE02ifXDmA==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js" integrity="sha512-9jGNr5Piwe8nzLLYTk8QrEMPfjGU0px80GYzKZUxi7lmCfrBjtyCc1V5kkS5vxVwwIB7Qpzc7UxLiQxfAN30dw==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/2.4.1/eruda.min.js" integrity="sha512-RrQDQUon0OiQVjKQYkMuhtLgx8R/4niagIVdHltxcAJa1+cc8FJFFOhtLuK3YJAoo5mdfAFh98ZQwbDKJgFIpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script>function getOS() {
+            var userAgent = window.navigator.userAgent,
+                platform = window.navigator.platform,
+                macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+                iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+                os = null;
+          
+            if (macosPlatforms.indexOf(platform) !== -1) {
+              os = 'Mac OS';
+            } else if (iosPlatforms.indexOf(platform) !== -1) {
+              os = 'iOS';
+            } else if (windowsPlatforms.indexOf(platform) !== -1) {
+              os = 'Windows'
+            } else if (/Android/.test(userAgent)) {
+              os = 'Android';
+            } else if (!os && /Linux/.test(platform)) {
+              os = 'Linux';
+            }
+          
+            return os;
+          };
+        const OS = getOS();
+        if (OS === 'IOS' || OS === 'Android') eruda.init();</script><script>window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});</script></body></html>
